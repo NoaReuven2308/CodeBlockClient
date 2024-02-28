@@ -1,21 +1,24 @@
-import './styles.css';
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import io from 'socket.io-client';
-import Lobby from './Lobby';
-import CodeBlockPage from './CodeBlockPage';
-
-// Initialize socket connection
-const socket = io('https://codeblockserver-production.up.railway.app/'); // Update with your server's address
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
-    <Router>
-        <Routes>
-          <Route path="/lobby" element={<Lobby />} />
-          <Route path="/codeblock/:id" element={<CodeBlockPage socket={socket} mentor={true} />} />
-        </Routes>
-    </Router>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
 
